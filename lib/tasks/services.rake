@@ -9,7 +9,7 @@ namespace :services do
         config.access_token_secret = ENV["TWITTER_ACCESS_SECRET"]
       end
 
-      item = Item.where(active: true).order("last_published_at ASC, NULLS FIRST").first
+      item = Item.where(active: true).order("last_published_at ASC NULLS FIRST").first
 
       tweet = client.update(item.text)
 
