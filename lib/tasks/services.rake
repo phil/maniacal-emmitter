@@ -19,7 +19,7 @@ namespace :services do
         text: item.text
       )
       item.update(
-        last_published_at: Time.current
+        latest_published_at: Time.current
       )
     end
   end
