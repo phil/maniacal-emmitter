@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.references :item
       t.datetime :published_at
       t.string :platform_post_id
+      t.text :text
     end
   end
 end

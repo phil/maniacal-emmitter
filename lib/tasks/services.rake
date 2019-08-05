@@ -15,7 +15,8 @@ namespace :services do
 
       item.posts.create(
         published_at: Time.current,
-        platform_post_id: tweet.id
+        platform_post_id: tweet.id,
+        text: item.text
       )
       item.update(
         last_published_at: Time.current
