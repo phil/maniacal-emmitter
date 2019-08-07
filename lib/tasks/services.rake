@@ -2,6 +2,8 @@ namespace :services do
 
   task :emit => :environment do
     Account.all.each do |account|
+      next unless Date.current.yday % account.post_frequency == 0
+
       client = Twitter::REST::Client.new do |config|
         config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
         config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
